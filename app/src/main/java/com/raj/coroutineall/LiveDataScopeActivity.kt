@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.liveData
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class LiveDataScopeActivity : AppCompatActivity() {
 
     lateinit var viewModel: ViewModelLiveDataScope
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.user.observe(this, Observer {
             println("DEBUG: $it")
             Log.e("xfdfdfd",it.toString())
-            tex.text=it.toString()
+            text.text=it.toString()
 
         })
          viewModel.setUserId(1)
@@ -31,6 +31,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun settxe(s:String){
-        tex.text=s
+        text.text=s
     }
 }
